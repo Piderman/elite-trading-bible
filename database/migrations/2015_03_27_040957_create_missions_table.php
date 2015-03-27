@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMissionTable extends Migration {
+class CreateMissionsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,15 @@ class CreateMissionTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('mission', function(Blueprint $table)
-		{
+        Schema::create('missions', function(Blueprint $table)
+        {
             $table->increments('id');
             $table->string('destination_system');
             $table->string('destination_station');
             $table->string('commodity');
             $table->integer('qty');
             $table->boolean('hasCargo');
-		});
+        });
 	}
 
 	/**
@@ -30,7 +30,7 @@ class CreateMissionTable extends Migration {
 	 */
 	public function down()
 	{
-        Schema::drop('mission');
+        Schema::drop('missions');
 	}
 
 }

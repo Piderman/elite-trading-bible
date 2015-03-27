@@ -14,20 +14,20 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		 $this->call('MissionTableSeeder');
+		 $this->call('MissionsTableSeeder');
 	}
 }
 
 
-class MissionTableSeeder extends Seeder {
+class MissionsTableSeeder extends Seeder {
 
     public function run()
     {
         // nuke it, because
-        DB::table('mission')->delete();
+        DB::table('missions')->delete();
 
         // testing data
-        DB::table('mission')->insert(array(
+        DB::table('missions')->insert(array(
             array(
                 'destination_system' => 'Cupis',
                 'destination_station' => 'Brahe Hub',
