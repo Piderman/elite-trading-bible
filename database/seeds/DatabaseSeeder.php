@@ -14,7 +14,42 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		// $this->call('UserTableSeeder');
+		 $this->call('MissionTableSeeder');
 	}
+}
+
+
+class MissionTableSeeder extends Seeder {
+
+    public function run()
+    {
+        // nuke it, because
+        DB::table('mission')->delete();
+
+        // testing data
+        DB::table('mission')->insert(array(
+            array(
+                'destination_system' => 'Cupis',
+                'destination_station' => 'Brahe Hub',
+                'commodity' => 'lithium',
+                'qty' => 2,
+                'hasCargo' => false
+            ),
+            array(
+                'destination_system' => 'Pices',
+                'destination_station' => 'Knipling',
+                'commodity' => 'gain',
+                'qty' => 16,
+                'hasCargo' => true
+            ),
+            array(
+                'destination_system' => 'Brani',
+                'destination_station' => 'Wundt',
+                'commodity' => 'silver',
+                'qty' => 8,
+                'hasCargo' => false
+            )
+        ));
+    }
 
 }
