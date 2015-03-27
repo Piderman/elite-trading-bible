@@ -33,21 +33,24 @@ class MissionsTableSeeder extends Seeder {
                 'destination_station' => 'Brahe Hub',
                 'commodity' => 'lithium',
                 'qty' => 2,
-                'hasCargo' => false
+                'hasCargo' => false,
+                'isDone' => false
             ),
             array(
                 'destination_system' => 'Pices',
                 'destination_station' => 'Knipling',
                 'commodity' => 'gain',
                 'qty' => 16,
-                'hasCargo' => true
+                'hasCargo' => true,
+                'isDone' => false
             ),
             array(
                 'destination_system' => 'Brani',
                 'destination_station' => 'Wundt',
                 'commodity' => 'silver',
                 'qty' => 8,
-                'hasCargo' => false
+                'hasCargo' => false,
+                'isDone' => false
             )
         ));
     }
