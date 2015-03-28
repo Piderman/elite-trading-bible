@@ -39,7 +39,7 @@ class MissionsTableSeeder extends Seeder {
             array(
                 'destination_system' => 'Pices',
                 'destination_station' => 'Knipling',
-                'commodity' => 'gain',
+                'commodity' => 'grain',
                 'qty' => 16,
                 'hasCargo' => true,
                 'isDone' => false

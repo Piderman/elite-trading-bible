@@ -4,7 +4,6 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Mission;
-use Illuminate\Http\Request;
 
 class MissionsController extends Controller {
 
@@ -35,13 +34,15 @@ class MissionsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Requests\CreateMissionRequest $request)
 	{
-        //gets data from a form / JSON we have sent
-        $input = Request::all();
+        // validation is triggered automatically due to typehinting
+
+        $input = $request->all();
 
         Mission::create($input);
 
+        return redirect('missions');
 	}
 
 	/**

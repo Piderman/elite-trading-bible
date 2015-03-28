@@ -16,6 +16,7 @@ Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 
 Route::get('missions', 'MissionsController@index');
+Route::post('missions', 'MissionsController@store');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
