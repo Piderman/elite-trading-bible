@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mission;
 use Illuminate\Http\Request;
 
-class MissionController extends Controller {
+class MissionsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -16,8 +16,8 @@ class MissionController extends Controller {
 	public function index()
 	{
         // bring me all the missions yo
-		$mission = Mission::all();
-        return $mission;
+        $missions = Mission::all();
+		return view('mission.index', compact('missions'));
 	}
 
 	/**
@@ -37,9 +37,11 @@ class MissionController extends Controller {
 	 */
 	public function store()
 	{
-        //why?
-        $mission = Mission::create(Request::all());
-        return $mission;
+        //gets data from a form / JSON we have sent
+        $input = Request::all();
+
+        Mission::create($input);
+
 	}
 
 	/**
@@ -72,12 +74,7 @@ class MissionController extends Controller {
 	 */
 	public function update($id)
 	{
-        // ???
-        $mission = Mission::find($id);
-        $mission->done = Request::input('done');
-        $mission->save();
 
-        return $mission;
 	}
 
 	/**
